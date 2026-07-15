@@ -1,0 +1,10 @@
+services:
+  mail-sender:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nortech-mail-sender
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "4000:4000"
