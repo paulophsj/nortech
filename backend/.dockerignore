@@ -1,0 +1,5 @@
+node_modules
+.env
+.env.example
+docker-stack-dev.yml
+docker-stack-prod.yml
