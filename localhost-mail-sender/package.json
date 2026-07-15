@@ -1,5 +1,5 @@
 {
-  "name": "nortech-backend",
+  "name": "localhost-mail-sender",
   "version": "1.0.0",
   "private": true,
   "main": "src/server.js",
@@ -8,10 +8,10 @@
     "dev": "node --watch src/server.js"
   },
   "dependencies": {
-    "cors": "2.8.6",
     "dotenv": "17.4.2",
     "express": "5.2.1",
-    "express-rate-limit": "^8.5.2",
+    "node-cron": "4.6.0",
+    "nodemailer": "9.0.3",
     "pg": "8.22.0",
     "pg-hstore": "2.3.4",
     "sequelize": "6.37.8"

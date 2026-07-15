@@ -4,7 +4,6 @@ const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
   secure: process.env.SMTP_SECURE === 'true',
-  family: 4,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -36,7 +35,7 @@ function buildContactEmailHtml(contact) {
   const email = escapeHtml(contact.email);
   const servico = escapeHtml(contact.servico_interesse);
   const mensagem = escapeHtml(contact.mensagem).replace(/\r?\n/g, '<br />');
-  const recebidaEm = new Date().toLocaleString('pt-BR', {
+  const recebidaEm = new Date(contact.createdAt || Date.now()).toLocaleString('pt-BR', {
     timeZone: 'America/Recife',
     dateStyle: 'long',
     timeStyle: 'short',
