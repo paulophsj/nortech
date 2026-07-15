@@ -545,7 +545,7 @@
   const feedback = document.getElementById('form-feedback');
   const submitBtn = document.getElementById('submit-btn');
   const rocketWrap = document.getElementById('rocket-wrap');
-  const API_URL = 'http://localhost:3000/api/contacts';
+  const API_URL = 'https://nortech-4.onrender.com/api/contacts';
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const MIN_BURN_MS = 900;
 
