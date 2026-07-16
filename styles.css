@@ -70,10 +70,17 @@
 
 html {
   scroll-padding-top: 90px;
+  /* impede rolagem/estouro horizontal no mobile — sem isso, elementos
+     decorativos que vazam para a direita fazem a "layout viewport" ficar
+     mais larga que a tela e empurram itens position:fixed (header e
+     back-to-top) para fora do enquadramento */
+  overflow-x: hidden;
 }
 
 body {
   cursor: default;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* ── Cursor glow que segue o mouse ─────────── */
