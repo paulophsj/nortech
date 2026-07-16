@@ -132,7 +132,7 @@
         </a>
 
         <!-- Mobile hamburger -->
-        <button id="menu-btn" class="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-[60]" aria-label="Abrir menu">
+        <button id="menu-btn" class="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-[60]" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
           <span class="menu-line"></span>
           <span class="menu-line"></span>
           <span class="menu-line"></span>
@@ -140,17 +140,36 @@
       </div>
     </nav>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white/95 dark:bg-night-950/95 backdrop-blur-xl translate-x-full transition-transform duration-500 ease-out z-50">
-      <ul class="h-full flex flex-col items-center justify-center gap-8 text-2xl font-bold">
-        <li><a href="#inicio" class="mobile-link">Início</a></li>
-        <li><a href="#servicos" class="mobile-link">Serviços</a></li>
-        <li><a href="#processo" class="mobile-link">Processo</a></li>
-        <li><a href="#sobre" class="mobile-link">Sobre</a></li>
-        <li><a href="#depoimentos" class="mobile-link">Depoimentos</a></li>
-        <li><a href="#contato" class="mobile-link">Contato</a></li>
-      </ul>
-    </div>
+    <!-- Mobile menu — drawer lateral -->
+    <div id="mobile-overlay" class="lg:hidden fixed h-screen inset-0 z-[109]" aria-hidden="true"></div>
+    
+    <!-- MENU LATERAL (ASIDE): Agora fixo no topo, direita e base, garantindo altura total (h-screen) -->
+    <aside id="mobile-menu" class="lg:hidden fixed top-0 right-0 bottom-0 h-screen z-[110]" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+      <div class="mobile-menu-head">
+        <a href="#inicio" class="mobile-brand" data-close>
+          <span class="mobile-brand-logo">
+            <img src="assets/logo_preenchida-removebg-preview.png" alt="Logo Nortech" />
+          </span>
+          <span>Nor<span class="mobile-brand-accent">tech</span></span>
+        </a>
+        <button id="menu-close" type="button" aria-label="Fechar menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav">
+        <a href="#inicio" class="mobile-link" data-close>Início</a>
+        <a href="#servicos" class="mobile-link" data-close>Serviços</a>
+        <a href="#processo" class="mobile-link" data-close>Processo</a>
+        <a href="#sobre" class="mobile-link" data-close>Sobre</a>
+        <a href="#depoimentos" class="mobile-link" data-close>Depoimentos</a>
+      </nav>
+
+      <a href="#contato" class="btn-primary mobile-cta" data-close>
+        <span>Fale conosco</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+    </aside>
   </header>
 
   <!-- ══════════════════ HERO ══════════════════ -->
