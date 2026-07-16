@@ -771,6 +771,8 @@ html.theme-switching .theme-toggle svg {
 
 .form-input {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border-radius: 0.75rem;
   border: 1px solid var(--input-border);
   background: var(--input-bg);
@@ -803,6 +805,11 @@ html.theme-switching .theme-toggle svg {
   cursor: pointer;
   text-align: left;
   user-select: none;
+}
+
+.custom-select-value {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .custom-select-trigger .chevron {

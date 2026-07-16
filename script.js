@@ -17,6 +17,10 @@
   function applyTheme(theme) {
     root.classList.toggle('dark', theme === 'dark');
     localStorage.setItem('theme', theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', theme === 'dark' ? '#050810' : '#f8fafc');
+    }
     window.dispatchEvent(new CustomEvent('themechange'));
   }
 
