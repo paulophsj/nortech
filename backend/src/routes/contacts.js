@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const rateLimit = require('express-rate-limit');
 const Contact = require('../models/Contact');
+const { sendContactEmail } = require('../services/mailer');
 const { sanitizeText } = require('../utils/sanitize');
 
 const router = Router();
@@ -34,7 +35,9 @@ router.post('/contacts', contactLimiter, async (req, res) => {
       mensagem,
     });
 
-    return res.status(201).json({ id: contact.id, message: 'Mensagem recebida com sucesso.' });
+    await sendContactEmail(contact);
+
+    return res.status(201).json({ id: contact.id, message: 'Mensagem enviada com sucesso.' });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: 'Falha ao processar a mensagem.' });

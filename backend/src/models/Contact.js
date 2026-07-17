@@ -23,10 +23,6 @@ const Contact = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    is_send: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    }
   },
   {
     schema: 'nortech',
