@@ -1,0 +1,4 @@
+Dockerfile
+.dockerignore
+docker-stack-dev.yml
+docker-stack-prod.yml
