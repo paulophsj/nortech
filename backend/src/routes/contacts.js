@@ -40,7 +40,10 @@ router.post('/contacts', contactLimiter, async (req, res) => {
     return res.status(201).json({ id: contact.id, message: 'Mensagem enviada com sucesso.' });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: 'Falha ao processar a mensagem.' });
+    return res.status(500).json({
+      error: 'Falha ao processar a mensagem.',
+      debug: { message: err && err.message, code: err && err.code, command: err && err.command },
+    });
   }
 });
 
